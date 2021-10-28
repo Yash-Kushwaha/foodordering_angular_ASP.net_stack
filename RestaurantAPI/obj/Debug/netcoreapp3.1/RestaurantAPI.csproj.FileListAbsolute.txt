@@ -1,0 +1,6 @@
+D:\Food Ordering Project\RestaurantAPI\obj\Debug\netcoreapp3.1\RestaurantAPI.csproj.AssemblyReference.cache
+D:\Food Ordering Project\RestaurantAPI\obj\Debug\netcoreapp3.1\RestaurantAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Food Ordering Project\RestaurantAPI\obj\Debug\netcoreapp3.1\RestaurantAPI.AssemblyInfoInputs.cache
+D:\Food Ordering Project\RestaurantAPI\obj\Debug\netcoreapp3.1\RestaurantAPI.AssemblyInfo.cs
+D:\Food Ordering Project\RestaurantAPI\obj\Debug\netcoreapp3.1\RestaurantAPI.csproj.CoreCompileInputs.cache
+D:\Food Ordering Project\RestaurantAPI\obj\Debug\netcoreapp3.1\RestaurantAPI.MvcApplicationPartsAssemblyInfo.cache
