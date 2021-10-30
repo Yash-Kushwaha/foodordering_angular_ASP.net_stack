@@ -32,9 +32,9 @@ namespace RestaurantAPI.Service
         public string AddRestaurant(Restaurant restaurant)
         {
             Restaurant res = repo.GetRestaurant(restaurant.Name);
-            if (res == null)
+            if (res != null)
             {
-                throw new RestaurantNotFoundException("Restaurant does not exist");
+                throw new RestaurantAlreadyExistException("Restaurant Already exist");
             }
             return repo.AddRestaurant(restaurant);
         }
@@ -72,7 +72,7 @@ namespace RestaurantAPI.Service
             {
                 throw new RestaurantNotFoundException("Restaurant does not exist");
             }
-            else if (foo != null)
+            else if (foo == null)
             {
                 throw new FoodItemNotFoundException("FoodItem Not found");
             }
@@ -87,7 +87,7 @@ namespace RestaurantAPI.Service
             {
                 throw new RestaurantNotFoundException("Restaurant does not exist");
             }
-            else if (foo == null)
+            else if (foo == null && foo.Count == 0)
             {
                 throw new FoodItemNotFoundException("FoodItem Not found");
             }
@@ -107,9 +107,9 @@ namespace RestaurantAPI.Service
         public List<Restaurant> GetRestaurants()
         {
             List<Restaurant> obj = repo.GetRestaurants();
-            if (obj == null && obj.Count > 0)
+            if (obj == null && obj.Count == 0)
             {
-                throw new RestaurantNotFoundException("Restaurant does not exist");
+                throw new RestaurantNotFoundException("Restaurants does not exist");
             }
             return obj;
         }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UsersMicroservice.Exceptions;
 using UsersMicroservice.Models;
 using UsersMicroservice.Repository;
@@ -16,6 +17,13 @@ namespace UsersMicroservice.Service
 
         public string AddUser(User user)
         {
+            Regex rx = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$");
+            if (!rx.IsMatch(user.Password))
+            {
+                throw new InvalidPasswordException("Invalid Password");
+            }
+
+            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
             var obj = repo.GetUserById(user.UserId);
             return obj == null ? repo.AddUser(user) : throw new UserAlreadyExistException($"{user.Name} with Id: {obj.UserId} Already Exist.");
         }

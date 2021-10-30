@@ -23,6 +23,10 @@ namespace UsersMicroservice.Controllers
             {
                 return StatusCode(201, service.AddUser(user));
             }
+            catch (InvalidPasswordException e)
+            {
+                return BadRequest(e.Message);
+            }
             catch (UserAlreadyExistException e)
             {
                 return Conflict(e.Message);

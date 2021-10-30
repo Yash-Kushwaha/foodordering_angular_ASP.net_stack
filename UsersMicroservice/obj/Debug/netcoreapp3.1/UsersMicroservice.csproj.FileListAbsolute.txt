@@ -64,3 +64,15 @@ D:\Food Ordering Project\UsersMicroservice\obj\Debug\netcoreapp3.1\UsersMicroser
 D:\Food Ordering Project\UsersMicroservice\obj\Debug\netcoreapp3.1\UsersMicroservice.dll
 D:\Food Ordering Project\UsersMicroservice\obj\Debug\netcoreapp3.1\UsersMicroservice.pdb
 D:\Food Ordering Project\UsersMicroservice\obj\Debug\netcoreapp3.1\UsersMicroservice.genruntimeconfig.cache
+D:\Food Ordering Project\UsersMicroservice\bin\Debug\netcoreapp3.1\IdentityModel.dll
+D:\Food Ordering Project\UsersMicroservice\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Food Ordering Project\UsersMicroservice\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Food Ordering Project\UsersMicroservice\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Food Ordering Project\UsersMicroservice\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+D:\Food Ordering Project\UsersMicroservice\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+D:\Food Ordering Project\UsersMicroservice\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+D:\Food Ordering Project\UsersMicroservice\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+D:\Food Ordering Project\UsersMicroservice\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+D:\Food Ordering Project\UsersMicroservice\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.dll
+D:\Food Ordering Project\UsersMicroservice\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Food Ordering Project\UsersMicroservice\obj\Debug\netcoreapp3.1\UsersMicroservice.csproj.CopyComplete

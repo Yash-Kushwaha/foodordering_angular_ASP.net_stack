@@ -40,7 +40,13 @@ namespace UsersMicroservice.Repository
 
         public User LoginUser(User user)
         {
-            return db.Users.Where(x => x.Name == user.Name && x.Password == user.Password).FirstOrDefault();
+            var usr = db.Users.Where(x => x.Name == user.Name).FirstOrDefault();
+            if (usr == null || !BCrypt.Net.BCrypt.Verify(user.Password, usr.Password))
+            {
+                return null;
+            }
+            return usr;
+
         }
 
         public string UpdateUserById(int Id, User user)
