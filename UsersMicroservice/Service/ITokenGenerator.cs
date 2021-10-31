@@ -1,9 +1,7 @@
-﻿using UsersMicroservice.Models;
-
-namespace UsersMicroservice.Service
+﻿namespace UsersMicroservice.Service
 {
     public interface ITokenGenerator
     {
-        string GenerateJWTToken(User user);
+        string GenerateJWTToken(string name, string role);
     }
 }

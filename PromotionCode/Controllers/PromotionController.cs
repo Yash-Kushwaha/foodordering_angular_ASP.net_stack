@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PromotionCode.Filters;
-using PromotionCode.Models;
 using PromotionCode.Services;
 
 namespace PromotionCode.Controllers
@@ -17,29 +17,35 @@ namespace PromotionCode.Controllers
             this.service = service;
         }
 
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public IActionResult PostPromotion(Models.PromotionCode promotionCodes)
         {
             return Created("api/Prmotion", service.AddPromotion(promotionCodes));
         }
+
+        [Authorize(Roles = "admin")]
         [HttpGet]
         public IActionResult GetAllPromotion()
         {
             return Ok(service.GetPromotionCodes());
         }
 
+        [Authorize(Roles = "admin,customer")]
         [HttpGet("{Id}")]
         public IActionResult GetPromotionById(string Id)
         {
             return Ok(service.GetPromotionCodesByID(Id));
         }
 
+        [Authorize(Roles = "admin,customer")]
         [HttpPut("{Id}")]
         public IActionResult UpdatePromotion(string Id, Models.PromotionCode promotionCodes)
         {
             return Ok(service.UpdatePromotion(Id, promotionCodes));
         }
 
+        [Authorize(Roles = "admin")]
         [HttpDelete("{Id}")]
         public IActionResult DeletePromotion(string Id)
         {

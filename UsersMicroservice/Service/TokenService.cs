@@ -4,22 +4,18 @@ using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using UsersMicroservice.Models;
 
 namespace UsersMicroservice.Service
 {
     public class TokenService : ITokenGenerator
     {
-        public string GenerateJWTToken(User user)
+        public string GenerateJWTToken(string Name, string Role)
         {
             var claims = new[]
-            {
-                new Claim("Address", user.Address),
-                new Claim("Email", user.Email),
-                new Claim("MobileNumber", user.MobileNumber),
-                new Claim("Name", user.Name),
-                new Claim("Password", user.Password),
-                new Claim("Role", user.Role)
+             {
+                new Claim("name", Name),
+                new Claim("role", Role)
+               // new Claim("phone", phone)
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this_is_my_secret_key"));
@@ -36,9 +32,11 @@ namespace UsersMicroservice.Service
             var response = new
             {
                 token = new JwtSecurityTokenHandler().WriteToken(token),
+                Name = Name
             };
 
             return JsonConvert.SerializeObject(response);
+
 
         }
     }

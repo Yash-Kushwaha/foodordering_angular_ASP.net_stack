@@ -38,7 +38,7 @@ namespace UsersMicroservice.Controllers
             try
             {
                 var obj = service.LoginUser(user);
-                return Accepted(token.GenerateJWTToken(obj));
+                return Accepted(token.GenerateJWTToken(obj.Name, obj.Role));
             }
             catch (UserAlreadyExistException e)
             {

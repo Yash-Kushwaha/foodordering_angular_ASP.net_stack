@@ -46,6 +46,8 @@ namespace RestaurantAPI
                 ValidAudience = "CustomerWebApi"
             });
 
+
+
             services.AddSwaggerGen(x => x.SwaggerDoc("RestaurantAPI",
                 new Microsoft.OpenApi.Models.OpenApiInfo
                 {

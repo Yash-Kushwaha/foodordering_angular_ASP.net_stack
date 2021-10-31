@@ -1,12 +1,15 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using PromotionCode.Models;
 using PromotionCode.Repository;
 using PromotionCode.Services;
+using System.Text;
 
 namespace PromotionCode
 {
@@ -31,6 +34,23 @@ namespace PromotionCode
                 {
                     Title = "Promotion Code API"
                 }));
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this_is_my_secret_key"));
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options => options.TokenValidationParameters = new TokenValidationParameters()
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = key,
+
+                ValidateIssuer = true,
+                ValidIssuer = "UserWebApi",
+
+                ValidateAudience = true,
+                ValidAudience = "CustomerWebApi"
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,7 +69,7 @@ namespace PromotionCode
             {
                 x.SwaggerEndpoint("/swagger/PromotionAPI/swagger.json", "UserAPI API");
             });
-            app.UseAuthorization();
+            app.UseAuthentication().UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
