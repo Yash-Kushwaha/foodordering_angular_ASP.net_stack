@@ -18,7 +18,7 @@ namespace PromotionCode.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostPromotion(PromotionCodes promotionCodes)
+        public IActionResult PostPromotion(Models.PromotionCode promotionCodes)
         {
             return Created("api/Prmotion", service.AddPromotion(promotionCodes));
         }
@@ -32,6 +32,18 @@ namespace PromotionCode.Controllers
         public IActionResult GetPromotionById(string Id)
         {
             return Ok(service.GetPromotionCodesByID(Id));
+        }
+
+        [HttpPut("{Id}")]
+        public IActionResult UpdatePromotion(string Id, Models.PromotionCode promotionCodes)
+        {
+            return Ok(service.UpdatePromotion(Id, promotionCodes));
+        }
+
+        [HttpDelete("{Id}")]
+        public IActionResult DeletePromotion(string Id)
+        {
+            return Ok(service.DeletePromotion(Id));
         }
     }
 }

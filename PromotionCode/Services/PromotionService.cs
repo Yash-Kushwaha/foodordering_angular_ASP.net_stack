@@ -14,7 +14,7 @@ namespace PromotionCode.Services
             this.repo = repo;
         }
 
-        public string AddPromotion(PromotionCodes promotionCodes)
+        public string AddPromotion(Models.PromotionCode promotionCodes)
         {
             var obj = repo.GetPromotionCodesByID(promotionCodes.PromotionId);
             if (obj != null)
@@ -34,7 +34,7 @@ namespace PromotionCode.Services
             return repo.DeletePromotion(Id);
         }
 
-        public List<PromotionCodes> GetPromotionCodes()
+        public List<Models.PromotionCode> GetPromotionCodes()
         {
             var obj = repo.GetPromotionCodes();
             if (obj == null && obj.Count == 0)
@@ -44,7 +44,7 @@ namespace PromotionCode.Services
             return obj;
         }
 
-        public PromotionCodes GetPromotionCodesByID(string Id)
+        public Models.PromotionCode GetPromotionCodesByID(string Id)
         {
             var obj = repo.GetPromotionCodesByID(Id);
             if (obj == null)
@@ -54,7 +54,7 @@ namespace PromotionCode.Services
             return obj;
         }
 
-        public string UpdatePromotion(string Id, PromotionCodes promotionCodes)
+        public string UpdatePromotion(string Id, Models.PromotionCode promotionCodes)
         {
             var obj = repo.GetPromotionCodesByID(Id);
             if (obj == null)

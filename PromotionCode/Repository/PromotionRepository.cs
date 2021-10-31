@@ -1,4 +1,5 @@
 ﻿using PromotionCode.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,39 +14,40 @@ namespace PromotionCode.Repository
             this.db = db;
         }
 
-        public string AddPromotion(PromotionCodes promotionCodes)
+        public string AddPromotion(Models.PromotionCode promotionCodes)
         {
-            db.PromotionCodes.Add(promotionCodes);
+            promotionCodes.PromotionId = DateTime.Now.Ticks.ToString("x");
+            db.PromotionCode.Add(promotionCodes);
             db.SaveChanges();
             return $"PromotionCode with id : {promotionCodes.PromotionId} generated with expiry date {promotionCodes.ExpiryDate}";
         }
 
         public string DeletePromotion(string Id)
         {
-            var obj = db.PromotionCodes.Where(x => x.PromotionId == Id).FirstOrDefault();
-            db.PromotionCodes.Remove(obj);
+            var obj = db.PromotionCode.Where(x => x.PromotionId == Id).FirstOrDefault();
+            db.PromotionCode.Remove(obj);
             db.SaveChanges();
             return $"PromotionCode with id : {obj.PromotionId} Deleted.";
         }
 
-        public List<PromotionCodes> GetPromotionCodes()
+        public List<Models.PromotionCode> GetPromotionCodes()
         {
-            return db.PromotionCodes.Where(x => true).ToList();
+            return db.PromotionCode.Where(x => true).ToList();
         }
 
-        public PromotionCodes GetPromotionCodesByID(string Id)
+        public Models.PromotionCode GetPromotionCodesByID(string Id)
         {
-            return db.PromotionCodes.Where(x => x.PromotionId == Id).FirstOrDefault();
+            return db.PromotionCode.Where(x => x.PromotionId == Id).FirstOrDefault();
         }
 
-        public string UpdatePromotion(string Id, PromotionCodes promotionCodes)
+        public string UpdatePromotion(string Id, Models.PromotionCode promotionCodes)
         {
-            var obj = db.PromotionCodes.Where(x => x.PromotionId == Id).FirstOrDefault();
+            var obj = db.PromotionCode.Where(x => x.PromotionId == Id).FirstOrDefault();
             obj.Discount = promotionCodes.Discount;
             obj.ExpiryDate = promotionCodes.ExpiryDate;
             obj.PromotionId = promotionCodes.PromotionId;
             obj.UseCount = promotionCodes.UseCount;
-            db.Entry<PromotionCodes>(obj).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            db.Entry<PromotionCode.Models.PromotionCode>(obj).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             db.SaveChanges();
             return $"PromotionCode with id : {obj.PromotionId} Updated.";
         }

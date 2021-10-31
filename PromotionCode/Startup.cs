@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PromotionCode.Models;
+using PromotionCode.Repository;
+using PromotionCode.Services;
 
 namespace PromotionCode
 {
@@ -21,12 +23,13 @@ namespace PromotionCode
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
+            services.AddScoped<IPromotionRepository, PromotionRepository>();
+            services.AddScoped<IPromotionService, PromotionService>();
             services.AddDbContext<Databasecontext>(options => options.UseSqlServer(Configuration.GetConnectionString("con")));
-            services.AddSwaggerGen(x => x.SwaggerDoc("UserAPI",
+            services.AddSwaggerGen(x => x.SwaggerDoc("PromotionAPI",
                 new Microsoft.OpenApi.Models.OpenApiInfo
                 {
-                    Title = "User API"
+                    Title = "Promotion Code API"
                 }));
         }
 
@@ -41,7 +44,11 @@ namespace PromotionCode
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseSwagger();
+            app.UseSwaggerUI(x =>
+            {
+                x.SwaggerEndpoint("/swagger/PromotionAPI/swagger.json", "UserAPI API");
+            });
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

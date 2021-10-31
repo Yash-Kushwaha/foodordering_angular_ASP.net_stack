@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RestaurantAPI.Filters;
 using RestaurantAPI.Models;
 using RestaurantAPI.Service;
@@ -25,7 +24,7 @@ namespace RestaurantAPI.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "customer")]
+        // [Authorize(Roles = "customer")]
         public IActionResult GetRestaurants()
         {
             return Ok(service.GetRestaurants());

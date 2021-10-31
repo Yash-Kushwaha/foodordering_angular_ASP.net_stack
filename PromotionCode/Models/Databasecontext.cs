@@ -8,6 +8,6 @@ namespace PromotionCode.Models
         {
             Database.EnsureCreated();
         }
-        public DbSet<PromotionCodes> PromotionCodes { get; set; }
+        public DbSet<PromotionCode> PromotionCode { get; set; }
     }
 }
