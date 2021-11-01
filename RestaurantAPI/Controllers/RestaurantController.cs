@@ -26,7 +26,7 @@ namespace RestaurantAPI.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "admin,customer")]
+        //[Authorize(Roles = "admin,customer")]
         public IActionResult GetRestaurants()
         {
             return Ok(service.GetRestaurants());

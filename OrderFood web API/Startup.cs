@@ -1,11 +1,14 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using OrderFood_web_API.Models;
 using OrderFood_web_API.Repository;
 using OrderFood_web_API.Services;
+using System.Text;
 
 namespace OrderFood_web_API
 {
@@ -32,6 +35,22 @@ namespace OrderFood_web_API
                 {
                     Title = "OrderFood API"
                 }));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this_is_my_secret_key"));
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options => options.TokenValidationParameters = new TokenValidationParameters()
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = key,
+
+                ValidateIssuer = true,
+                ValidIssuer = "UserWebApi",
+
+                ValidateAudience = true,
+                ValidAudience = "CustomerWebApi"
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,7 +70,7 @@ namespace OrderFood_web_API
             {
                 x.SwaggerEndpoint("/swagger/OrderFoodAPI/swagger.json", "OrderFood API");
             });
-            app.UseAuthorization();
+            app.UseAuthentication().UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

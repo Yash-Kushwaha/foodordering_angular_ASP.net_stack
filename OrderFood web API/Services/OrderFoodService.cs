@@ -16,6 +16,14 @@ namespace OrderFood_web_API.Services
             this.repo = repo;
         }
 
+        //public int GetPromoDisCount(string Id)
+        //{
+        //    var responseString = ApiCall.GetApi("http://localhost:58087/api/State/StateList");
+        //    var rootobj = new JsonConvert.DeserializeO
+        //    var rootobject = new JavaScriptSerializer().Deserialize<List<StateDto>>(responseString);
+        //    return rootobject;
+        //}
+
         [Obsolete]
         public string AddOrderFood(OrderFood orderFood)
         {
