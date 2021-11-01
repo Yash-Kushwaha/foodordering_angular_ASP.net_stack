@@ -1,5 +1,4 @@
 ﻿using PromotionCode.Exceptions;
-using PromotionCode.Models;
 using PromotionCode.Repository;
 using System.Collections.Generic;
 
@@ -59,9 +58,29 @@ namespace PromotionCode.Services
             var obj = repo.GetPromotionCodesByID(Id);
             if (obj == null)
             {
-                throw new PromotionNotFoundException("Promotion does not Exist");
+                throw new PromotionNotFoundException("Promotion Code does not Exist");
             }
             return repo.UpdatePromotion(Id, promotionCodes);
+        }
+
+        public string UsePromotionCode(string Id)
+        {
+            var obj = repo.GetPromotionCodesByID(Id);
+            if (obj == null)
+            {
+                throw new PromotionNotFoundException($"Promotion Code does not Exist");
+            }
+            else if (obj.UseCount > 0)
+            {
+                obj.UseCount--;
+                repo.UpdatePromotion(Id, obj);
+                return $"Promotion Code : {Id} used.";
+            }
+            else
+            {
+                repo.DeletePromotion(Id);
+                return $"Promotion Code : {Id} Cannot be used";
+            }
         }
     }
 }

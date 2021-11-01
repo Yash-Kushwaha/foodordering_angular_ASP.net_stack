@@ -1,5 +1,4 @@
-﻿using PromotionCode.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace PromotionCode.Services
 {
@@ -10,5 +9,6 @@ namespace PromotionCode.Services
         Models.PromotionCode GetPromotionCodesByID(string Id);
         string UpdatePromotion(string Id, Models.PromotionCode promotionCodes);
         string DeletePromotion(string Id);
+        string UsePromotionCode(string Id);
     }
 }

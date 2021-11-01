@@ -38,7 +38,7 @@ namespace PromotionCode.Controllers
             return Ok(service.GetPromotionCodesByID(Id));
         }
 
-        [Authorize(Roles = "admin,customer")]
+        [Authorize(Roles = "admin")]
         [HttpPut("{Id}")]
         public IActionResult UpdatePromotion(string Id, Models.PromotionCode promotionCodes)
         {
@@ -50,6 +50,13 @@ namespace PromotionCode.Controllers
         public IActionResult DeletePromotion(string Id)
         {
             return Ok(service.DeletePromotion(Id));
+        }
+
+        [Authorize(Roles = "customer")]
+        [HttpGet("use/{Id}")]
+        public IActionResult UsePromotionCode(string Id)
+        {
+            return Ok(service.UsePromotionCode(Id));
         }
     }
 }

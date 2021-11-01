@@ -1,0 +1,50 @@
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\OrderFood web API.exe
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\OrderFood web API.deps.json
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\OrderFood web API.runtimeconfig.json
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\OrderFood web API.runtimeconfig.dev.json
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\OrderFood web API.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\OrderFood web API.pdb
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\DnsClient.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\SharpCompress.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\shortid.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\runtimes\linux\native\libmongocrypt.so
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\runtimes\osx\native\libmongocrypt.dylib
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\runtimes\win\native\mongocrypt.dll
+D:\Food Ordering Project\OrderFood web API\obj\Debug\netcoreapp3.1\OrderFood web API.csproj.AssemblyReference.cache
+D:\Food Ordering Project\OrderFood web API\obj\Debug\netcoreapp3.1\OrderFood web API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Food Ordering Project\OrderFood web API\obj\Debug\netcoreapp3.1\OrderFood web API.AssemblyInfoInputs.cache
+D:\Food Ordering Project\OrderFood web API\obj\Debug\netcoreapp3.1\OrderFood web API.AssemblyInfo.cs
+D:\Food Ordering Project\OrderFood web API\obj\Debug\netcoreapp3.1\OrderFood web API.csproj.CoreCompileInputs.cache
+D:\Food Ordering Project\OrderFood web API\obj\Debug\netcoreapp3.1\OrderFood web API.MvcApplicationPartsAssemblyInfo.cs
+D:\Food Ordering Project\OrderFood web API\obj\Debug\netcoreapp3.1\OrderFood web API.MvcApplicationPartsAssemblyInfo.cache
+D:\Food Ordering Project\OrderFood web API\obj\Debug\netcoreapp3.1\staticwebassets\OrderFood web API.StaticWebAssets.Manifest.cache
+D:\Food Ordering Project\OrderFood web API\obj\Debug\netcoreapp3.1\staticwebassets\OrderFood web API.StaticWebAssets.xml
+D:\Food Ordering Project\OrderFood web API\obj\Debug\netcoreapp3.1\scopedcss\bundle\OrderFood web API.styles.css
+D:\Food Ordering Project\OrderFood web API\obj\Debug\netcoreapp3.1\OrderFood web API.RazorTargetAssemblyInfo.cache
+D:\Food Ordering Project\OrderFood web API\obj\Debug\netcoreapp3.1\OrderFood web API.dll
+D:\Food Ordering Project\OrderFood web API\obj\Debug\netcoreapp3.1\OrderFood web API.pdb
+D:\Food Ordering Project\OrderFood web API\obj\Debug\netcoreapp3.1\OrderFood web API.genruntimeconfig.cache
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\System.Net.Http.Json.dll
+D:\Food Ordering Project\OrderFood web API\bin\Debug\netcoreapp3.1\System.Text.Json.dll

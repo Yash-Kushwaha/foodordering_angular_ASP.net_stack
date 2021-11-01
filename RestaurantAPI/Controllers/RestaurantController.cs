@@ -57,7 +57,7 @@ namespace RestaurantAPI.Controllers
         [HttpPost("{RestaurantName}")]
         public IActionResult PostFood(string RestaurantName, FoodItem foodItem)
         {
-            return StatusCode(201, service.AddFoodItemToRestaurant(foodItem.RestaurantName, foodItem));
+            return StatusCode(201, service.AddFoodItemToRestaurant(RestaurantName, foodItem));
         }
 
         [Authorize(Roles = "admin,customer")]
