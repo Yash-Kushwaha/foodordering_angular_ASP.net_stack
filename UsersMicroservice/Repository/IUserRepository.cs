@@ -10,6 +10,6 @@ namespace UsersMicroservice.Repository
         List<User> GetAllUser();
         string UpdateUserById(int Id, User user);
         string DeleteUserById(int Id);
-        User LoginUser(User user);
+        User LoginUser(string Email, string Password);
     }
 }

@@ -5,7 +5,7 @@ namespace OrderFood_web_API.Services
 {
     public interface IOrderFoodService
     {
-        string AddOrderFood(OrderFood orderFood);
+        string AddOrderFood(OrderFood orderFood, string token);
         List<OrderFood> GetOrderFoods();
         OrderFood GetOrderFoodById(string Id);
         string UpdateOrderFood(string Id, OrderFood orderFood);

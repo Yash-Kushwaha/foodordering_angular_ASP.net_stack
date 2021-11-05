@@ -38,10 +38,10 @@ namespace UsersMicroservice.Repository
             return db.Users.Where(x => x.UserId == Id).FirstOrDefault();
         }
 
-        public User LoginUser(User user)
+        public User LoginUser(string Email, string Password)
         {
-            var usr = db.Users.Where(x => x.Name == user.Name).FirstOrDefault();
-            if (usr == null || !BCrypt.Net.BCrypt.Verify(user.Password, usr.Password))
+            var usr = db.Users.Where(x => x.Email == Email).FirstOrDefault();
+            if (usr == null || !BCrypt.Net.BCrypt.Verify(Password, usr.Password))
             {
                 return null;
             }

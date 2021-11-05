@@ -53,9 +53,9 @@ namespace UsersMicroservice.Service
             return obj ?? throw new UserNotFoundException($"user not found");
         }
 
-        public User LoginUser(User user)
+        public User LoginUser(string Email, string Password)
         {
-            var obj = repo.LoginUser(user);
+            var obj = repo.LoginUser(Email, Password);
             if (obj == null)
             {
                 throw new UserNotFoundException($"user not Exist");

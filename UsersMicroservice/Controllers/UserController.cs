@@ -33,12 +33,12 @@ namespace UsersMicroservice.Controllers
             }
         }
         [HttpPost("userlogin")]
-        public IActionResult UserLogin(User user)
+        public IActionResult UserLogin(Login user)
         {
             try
             {
-                var obj = service.LoginUser(user);
-                return Accepted(token.GenerateJWTToken(obj.Name, obj.Role));
+                var obj = service.LoginUser(user.Email,user.Password);
+                return Ok(token.GenerateJWTToken(obj.Name, obj.Role));
             }
             catch (UserAlreadyExistException e)
             {

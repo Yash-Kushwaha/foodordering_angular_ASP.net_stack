@@ -25,14 +25,14 @@ namespace UsersMicroservice.Service
                 issuer: "UserWebApi",
                 audience: "CustomerWebApi",
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(30),
+                expires: DateTime.Now.AddHours(3),
                 signingCredentials: creds
             );
 
             var response = new
             {
                 token = new JwtSecurityTokenHandler().WriteToken(token),
-                Name = Name
+                Name
             };
 
             return JsonConvert.SerializeObject(response);

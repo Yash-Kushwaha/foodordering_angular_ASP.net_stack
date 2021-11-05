@@ -21,7 +21,9 @@ namespace OrderFood_web_API.Controllers
         [HttpPost]
         public IActionResult PostOrderFood(OrderFood orderFood)
         {
-            return StatusCode(201, service.AddOrderFood(orderFood));
+            string authtoken = Request.Headers["Authorization"];
+            string token = authtoken["Bearer ".Length..].Trim();
+            return StatusCode(201, service.AddOrderFood(orderFood, token));
         }
 
         [HttpGet]
@@ -46,7 +48,7 @@ namespace OrderFood_web_API.Controllers
         }
 
         [HttpDelete("{Id}")]
-        [Authorize(Roles = "customer")]
+        //[Authorize(Roles = "customer")]
         public IActionResult DeleteOrder(string Id)
         {
             return Ok(service.DeleteOrderFood(Id));

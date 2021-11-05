@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantAPI", "..\Restaur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PromotionCode", "..\PromotionCode\PromotionCode.csproj", "{3D2B71D6-1744-4B14-8B98-2827290412D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderFood web API", "..\OrderFood web API\OrderFood web API.csproj", "{5D0ED058-31DF-4396-AB6D-B6880F081211}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderFood web API", "..\OrderFood web API\OrderFood web API.csproj", "{5D0ED058-31DF-4396-AB6D-B6880F081211}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API gateway", "..\API gateway\API gateway.csproj", "{E6538769-AB4C-4ACE-888F-CDF6AAEA8B1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API gateway", "..\API gateway\API gateway.csproj", "{E6538769-AB4C-4ACE-888F-CDF6AAEA8B1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrdering Test", "..\FoodOrdering Test\FoodOrdering Test.csproj", "{E85C8E19-AA23-4B9F-BF62-3A0CBA7D3060}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{E6538769-AB4C-4ACE-888F-CDF6AAEA8B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6538769-AB4C-4ACE-888F-CDF6AAEA8B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6538769-AB4C-4ACE-888F-CDF6AAEA8B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E85C8E19-AA23-4B9F-BF62-3A0CBA7D3060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E85C8E19-AA23-4B9F-BF62-3A0CBA7D3060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E85C8E19-AA23-4B9F-BF62-3A0CBA7D3060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E85C8E19-AA23-4B9F-BF62-3A0CBA7D3060}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

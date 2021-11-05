@@ -1,9 +1,12 @@
-﻿using OrderFood_web_API.Exceptions;
+﻿using Newtonsoft.Json;
+using OrderFood_web_API.Exceptions;
 using OrderFood_web_API.Models;
 using OrderFood_web_API.Repository;
 using shortid;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace OrderFood_web_API.Services
 {
@@ -15,18 +18,47 @@ namespace OrderFood_web_API.Services
         {
             this.repo = repo;
         }
+        public async Task<PromotionCode> GetPromotionCodeAsync(string Id, string token)
+        {
+            PromotionCode PromotionCode = null;
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+                HttpResponseMessage response = await httpClient.GetAsync($"https://localhost:44374/api/Promotion/{Id}");
+                if (response.IsSuccessStatusCode)
+                {
+                    string resbody = await response.Content.ReadAsStringAsync();
+                    PromotionCode = JsonConvert.DeserializeObject<PromotionCode>(resbody);
+                }
+                else
+                {
+                    throw new PromotionException(response.ReasonPhrase);
+                }
+            }
+            return PromotionCode;
+        }
 
-        //public int GetPromoDisCount(string Id)
-        //{
-        //    var responseString = ApiCall.GetApi("http://localhost:58087/api/State/StateList");
-        //    var rootobj = new JsonConvert.DeserializeO
-        //    var rootobject = new JavaScriptSerializer().Deserialize<List<StateDto>>(responseString);
-        //    return rootobject;
-        //}
+        public async Task<string> UpdatePromotionCode(string Id, string token)
+        {
+            string resbody = "";
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+                HttpResponseMessage response = await httpClient.GetAsync($"https://localhost:44374/api/Promotion/use/{Id}");
+                if (response.IsSuccessStatusCode)
+                {
+                    resbody = await response.Content.ReadAsStringAsync();
+                }
+            }
+            return resbody;
+        }
 
         [Obsolete]
-        public string AddOrderFood(OrderFood orderFood)
+        public string AddOrderFood(OrderFood orderFood, string token)
         {
+            Task<PromotionCode> promotionCode = null;
+            Task<string> updationresult = null;
+            float discount = 0;
             OrderFood res = repo.GetOrderFoodById(orderFood.OrderId);
             if (res != null)
             {
@@ -38,9 +70,24 @@ namespace OrderFood_web_API.Services
             {
                 totalprice += item.Price;
             }
-            orderFood.TotalPrice = totalprice;
-            orderFood.OrderId = ShortId.Generate();
-            return repo.AddOrderFood(orderFood);
+            try
+            {
+                if (orderFood.PromotionCode != "")
+                {
+                    promotionCode = GetPromotionCodeAsync(orderFood.PromotionCode, token);
+                    discount = promotionCode.Result.Discount;
+                    totalprice = (discount / 100) * totalprice;
+                    updationresult = UpdatePromotionCode(orderFood.PromotionCode, token);
+                }
+                orderFood.TotalPrice = totalprice;
+                orderFood.OrderId = ShortId.Generate();
+                return repo.AddOrderFood(orderFood);
+            }
+            catch (Exception)
+            {
+                return "Promotion Code Not Exist";
+            }
+
         }
 
         public string DeleteOrderFood(string Id)

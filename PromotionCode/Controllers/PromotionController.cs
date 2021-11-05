@@ -24,7 +24,7 @@ namespace PromotionCode.Controllers
             return Created("api/Prmotion", service.AddPromotion(promotionCodes));
         }
 
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin")]
         [HttpGet]
         public IActionResult GetAllPromotion()
         {

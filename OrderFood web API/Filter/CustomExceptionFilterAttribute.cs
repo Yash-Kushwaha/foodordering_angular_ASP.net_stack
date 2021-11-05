@@ -19,6 +19,11 @@ namespace OrderFood_web_API.Filter
             {
                 context.Result = new ConflictObjectResult(message);
             }
+            else if (exceptionType == typeof(PromotionException))
+            {
+                context.Result = new NotFoundObjectResult(message);
+            }
+
             else
             {
                 context.Result = new StatusCodeResult(500);

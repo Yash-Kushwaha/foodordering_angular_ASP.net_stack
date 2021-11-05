@@ -62,7 +62,7 @@ namespace OrderFood_web_API
             }
 
             app.UseHttpsRedirection();
-
+            app.UseStaticFiles();
             app.UseRouting();
             app.UseCors("AllowCors");
             app.UseSwagger();
