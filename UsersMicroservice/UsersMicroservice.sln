@@ -11,14 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PromotionCode", "..\Promoti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderFood web API", "..\OrderFood web API\OrderFood web API.csproj", "{5D0ED058-31DF-4396-AB6D-B6880F081211}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API gateway", "..\API gateway\API gateway.csproj", "{E6538769-AB4C-4ACE-888F-CDF6AAEA8B1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIgateway", "..\API gateway\APIgateway.csproj", "{E6538769-AB4C-4ACE-888F-CDF6AAEA8B1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrdering Test", "..\FoodOrdering Test\FoodOrdering Test.csproj", "{E85C8E19-AA23-4B9F-BF62-3A0CBA7D3060}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B9046A83-8A0E-4073-97F0-6128CCA91202}"
-	ProjectSection(SolutionItems) = preProject
-		.gitlab-ci.yml = .gitlab-ci.yml
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodOrdering Test", "..\FoodOrdering Test\FoodOrdering Test.csproj", "{E85C8E19-AA23-4B9F-BF62-3A0CBA7D3060}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

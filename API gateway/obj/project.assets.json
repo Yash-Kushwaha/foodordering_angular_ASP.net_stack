@@ -496,9 +496,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Food Ordering Project\\API gateway\\API gateway.csproj",
-      "projectName": "API gateway",
-      "projectPath": "D:\\Food Ordering Project\\API gateway\\API gateway.csproj",
+      "projectUniqueName": "D:\\Food Ordering Project\\API gateway\\APIgateway.csproj",
+      "projectName": "APIgateway",
+      "projectPath": "D:\\Food Ordering Project\\API gateway\\APIgateway.csproj",
       "packagesPath": "C:\\Users\\yash.kushwaha\\.nuget\\packages\\",
       "outputPath": "D:\\Food Ordering Project\\API gateway\\obj\\",
       "projectStyle": "PackageReference",
