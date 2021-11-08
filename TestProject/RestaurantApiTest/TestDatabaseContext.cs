@@ -1,6 +1,6 @@
 ﻿namespace TestProject.RestaurantApiTest
 {
-    class DataFixture
+    class TestDatabaseContext
     {
     }
 }
