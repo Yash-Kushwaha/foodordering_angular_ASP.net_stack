@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using OrderFood_web_API.Models;
 using OrderFood_web_API.Repository;
 using OrderFood_web_API.Services;
@@ -30,11 +31,11 @@ namespace OrderFood_web_API
             services.AddScoped<IOrderFoodService, OrderFoodService>();
             services.AddCors(options => options.AddPolicy("AllowCors", x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
             services.AddScoped<DatabaseContext>();
-            services.AddSwaggerGen(x => x.SwaggerDoc("OrderFoodAPI",
-                new Microsoft.OpenApi.Models.OpenApiInfo
-                {
-                    Title = "OrderFood API"
-                }));
+            services.AddSwaggerGen(x =>
+            {
+                x.SwaggerDoc("OrderFoodAPI",
+                   new OpenApiInfo { Title = "OrderFood API" });
+            });
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this_is_my_secret_key"));
             services.AddAuthentication(options =>
             {

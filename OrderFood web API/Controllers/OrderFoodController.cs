@@ -27,7 +27,7 @@ namespace OrderFood_web_API.Controllers
         }
 
         [HttpGet]
-        //[Authorize(Roles = "customer")]
+        [Authorize(Roles = "customer")]
         public IActionResult GetAllOrderFood()
         {
             return Ok(service.GetOrderFoods());
@@ -48,7 +48,7 @@ namespace OrderFood_web_API.Controllers
         }
 
         [HttpDelete("{Id}")]
-        //[Authorize(Roles = "customer")]
+        [Authorize(Roles = "customer")]
         public IActionResult DeleteOrder(string Id)
         {
             return Ok(service.DeleteOrderFood(Id));

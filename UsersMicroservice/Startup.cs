@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using UsersMicroservice.Models;
 using UsersMicroservice.Repository;
 using UsersMicroservice.Service;
@@ -26,7 +27,14 @@ namespace UsersMicroservice
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ITokenGenerator, TokenService>();
-            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("con")));
+
+            var connectionStr = Environment.GetEnvironmentVariable("SQL_DB");
+            if (connectionStr == null)
+            {
+                connectionStr = Configuration.GetConnectionString("con");
+            }
+
+            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connectionStr));
             services.AddSwaggerGen(x => x.SwaggerDoc("UserAPI",
                 new Microsoft.OpenApi.Models.OpenApiInfo
                 {

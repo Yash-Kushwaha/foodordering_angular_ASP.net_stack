@@ -1,12 +1,17 @@
 image: mcr.microsoft.com/dotnet/core/sdk
 stages:
   - build
+  - test
   - publish
 build:
  stage: build
  script:
-  - 'dotnet restore ./FoodOrder/FoodOrder.sln'
+  - 'dotnet restore FoodOrder/FoodOrder.sln'
   - 'dotnet build'
+test:
+ stage: test
+ script:
+  - 'dotnet test TestProject/TestProject.csproj'
 publish:
  stage: publish
  script:

@@ -9,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using PromotionCode.Models;
 using PromotionCode.Repository;
 using PromotionCode.Services;
+using System;
 using System.Text;
 
 namespace PromotionCode
@@ -28,7 +29,14 @@ namespace PromotionCode
             services.AddControllers();
             services.AddScoped<IPromotionRepository, PromotionRepository>();
             services.AddScoped<IPromotionService, PromotionService>();
-            services.AddDbContext<Databasecontext>(options => options.UseSqlServer(Configuration.GetConnectionString("con")));
+
+            var connectionStr = Environment.GetEnvironmentVariable("SQL_DB");
+            if (connectionStr == null)
+            {
+                connectionStr = Configuration.GetConnectionString("con");
+            }
+
+            services.AddDbContext<Databasecontext>(options => options.UseSqlServer(connectionStr));
             services.AddSwaggerGen(x => x.SwaggerDoc("PromotionAPI",
                 new Microsoft.OpenApi.Models.OpenApiInfo
                 {

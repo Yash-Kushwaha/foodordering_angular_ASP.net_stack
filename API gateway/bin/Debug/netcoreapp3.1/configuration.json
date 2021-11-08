@@ -2,51 +2,166 @@
   "ReRoutes": [
     {
       "DownstreamPathTemplate": "/api/OrderFood",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 44393
+          "Host": "food-orderfoodapi-1",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/OrderFood",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+      "UpstreamHttpMethod": [ "POST", "GET" ]
     },
     {
-      "DownstreamPathTemplate": "/api/Promotion",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/api/OrderFood/{Id}",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 44374
+          "Host": "food-orderfoodapi-1",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/OrderFood/{Id}",
+      "UpstreamHttpMethod": [ "PUT", "DELETE", "GET" ]
+    },
+
+
+    {
+      "DownstreamPathTemplate": "/api/Promotion",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "food-promotioncode-1",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/Promotion",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+      "UpstreamHttpMethod": [ "POST", "GET" ]
     },
     {
-      "DownstreamPathTemplate": "/api/Restaurant",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/api/Promotion/{Id}",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 44306
+          "Host": "food-promotioncode-1",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Promotion/{Id}",
+      "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Promotion/use/{Id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "food-promotioncode-1",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Promotion/use/{Id}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+
+
+
+    {
+      "DownstreamPathTemplate": "/api/Restaurant",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "food-restaurantapi-1",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/Restaurant",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+      "UpstreamHttpMethod": [ "POST", "GET" ]
     },
     {
-      "DownstreamPathTemplate": "/api/User",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/api/Restaurant/{Name}",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 44304
+          "Host": "food-restaurantapi-1",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Restaurant/{Name}",
+      "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Restaurant/{RestaurantName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "food-restaurantapi-1",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Restaurant/{RestaurantName}",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Restaurant/foodItem/{RestaurantName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "food-restaurantapi-1",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Restaurant/foodItem/{RestaurantName}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Restaurant/{RestaurantName}/{FoodItemName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "food-restaurantapi-1",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Restaurant/{RestaurantName}/{FoodItemName}",
+      "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ]
+    },
+
+
+    {
+      "DownstreamPathTemplate": "/api/User",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "food-users-1",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/User",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+      "UpstreamHttpMethod": [ "POST", "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/User/userlogin",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "food-users-1",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/User/userlogin",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/User/{Id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "food-users-1",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/User/{Id}",
+      "UpstreamHttpMethod": [ "PUT","GET", "DELETE" ]
     }
   ],
   "GlobalConfiguration": {}

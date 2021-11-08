@@ -49,19 +49,10 @@ namespace RestaurantAPI
 
 
             services.AddSwaggerGen(x => x.SwaggerDoc("RestaurantAPI",
-                new Microsoft.OpenApi.Models.OpenApiInfo
+                new OpenApiInfo
                 {
                     Title = "Restaurant API"
                 }));
-            services.AddSwaggerGen(x => x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-            {
-                Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
-                Name = "Authorization",
-                In = ParameterLocation.Header,
-                Type = SecuritySchemeType.ApiKey,
-                Scheme = "Bearer"
-            }));
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
