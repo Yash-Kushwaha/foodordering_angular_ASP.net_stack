@@ -5,7 +5,7 @@ stages:
 build:
  stage: build
  script:
-  - 'dotnet restore ./FoodOrder'
+  - 'dotnet restore ./FoodOrder/FoodOrder.sln'
   - 'dotnet build'
 publish:
  stage: publish
