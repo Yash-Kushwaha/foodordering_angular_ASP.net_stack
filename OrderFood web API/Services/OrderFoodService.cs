@@ -76,7 +76,7 @@ namespace OrderFood_web_API.Services
                 {
                     promotionCode = GetPromotionCodeAsync(orderFood.PromotionCode, token);
                     discount = promotionCode.Result.Discount;
-                    totalprice = (discount / 100) * totalprice;
+                    totalprice -= (discount / 100) * totalprice;
                     updationresult = UpdatePromotionCode(orderFood.PromotionCode, token);
                 }
                 orderFood.TotalPrice = totalprice;

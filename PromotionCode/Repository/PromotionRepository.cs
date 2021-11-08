@@ -19,7 +19,7 @@ namespace PromotionCode.Repository
             promotionCodes.PromotionId = DateTime.Now.Ticks.ToString("x");
             db.PromotionCode.Add(promotionCodes);
             db.SaveChanges();
-            return $"PromotionCode with id : {promotionCodes.PromotionId} generated with expiry date {promotionCodes.ExpiryDate}";
+            return $"PromotionCode generated";
         }
 
         public string DeletePromotion(string Id)
@@ -27,7 +27,7 @@ namespace PromotionCode.Repository
             var obj = db.PromotionCode.Where(x => x.PromotionId == Id).FirstOrDefault();
             db.PromotionCode.Remove(obj);
             db.SaveChanges();
-            return $"PromotionCode with id : {obj.PromotionId} Deleted.";
+            return $"PromotionCode Deleted.";
         }
 
         public List<Models.PromotionCode> GetPromotionCodes()
@@ -49,7 +49,7 @@ namespace PromotionCode.Repository
             obj.UseCount = promotionCodes.UseCount;
             db.Entry<PromotionCode.Models.PromotionCode>(obj).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             db.SaveChanges();
-            return $"PromotionCode with id : {obj.PromotionId} Updated.";
+            return $"PromotionCode Updated.";
         }
     }
 }
