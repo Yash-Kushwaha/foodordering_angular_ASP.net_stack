@@ -6,10 +6,7 @@ stages:
 build:
  stage: build
  script:
-  - 'dotnet restore UsersMicroservice/UsersMicroservice.csproj'
-  - 'dotnet restore RestaurantAPI/RestaurantAPI.csproj'
-  - 'dotnet restore PromotionCode/PromotionCode.csproj'
-  - 'dotnet restore OrderFood web API/OrderFood web API.csproj'
+  - 'dotnet restore FoodOrder'
   - 'dotnet build'
 test:
  stage: test
