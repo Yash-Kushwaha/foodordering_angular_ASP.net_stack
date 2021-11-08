@@ -5,7 +5,7 @@ stages:
 build:
  stage: build
  script:
-  - 'dotnet restore ./UsersMicroservice/UsersMicroservice.csproj'
+  - 'dotnet restore ./UsersMicroservice/UsersMicroservice.sln'
   - 'dotnet build'
 publish:
  stage: publish
