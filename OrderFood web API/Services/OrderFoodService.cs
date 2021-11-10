@@ -24,7 +24,7 @@ namespace OrderFood_web_API.Services
             using (var httpClient = new HttpClient())
             {
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
-                HttpResponseMessage response = await httpClient.GetAsync($"https://localhost:44374/api/Promotion/{Id}");
+                HttpResponseMessage response = await httpClient.GetAsync($"http://food-promotioncode:80/api/Promotion/{Id}");
                 if (response.IsSuccessStatusCode)
                 {
                     string resbody = await response.Content.ReadAsStringAsync();
@@ -44,7 +44,7 @@ namespace OrderFood_web_API.Services
             using (var httpClient = new HttpClient())
             {
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
-                HttpResponseMessage response = await httpClient.GetAsync($"https://localhost:44374/api/Promotion/use/{Id}");
+                HttpResponseMessage response = await httpClient.GetAsync($"http://food-promotioncode:80/api/Promotion/use/{Id}");
                 if (response.IsSuccessStatusCode)
                 {
                     resbody = await response.Content.ReadAsStringAsync();
@@ -85,7 +85,7 @@ namespace OrderFood_web_API.Services
             }
             catch (Exception)
             {
-                return "Promotion Code Not Exist";
+                return "Promotion Code Not exist";
             }
 
         }

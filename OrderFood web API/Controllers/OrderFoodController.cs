@@ -27,7 +27,7 @@ namespace OrderFood_web_API.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "customer")]
+        //[Authorize(Roles = "customer")]
         public IActionResult GetAllOrderFood()
         {
             return Ok(service.GetOrderFoods());

@@ -7,6 +7,7 @@ namespace UsersMicroservice.Service
     {
         string AddUser(User user);
         User GetUserById(int Id);
+        User GetUserByEmail(string Email);
         List<User> GetAllUser();
         string UpdateUserById(int Id, User user);
         string DeleteUserById(int Id);

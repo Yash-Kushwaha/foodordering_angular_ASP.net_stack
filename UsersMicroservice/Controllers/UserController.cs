@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using UsersMicroservice.Exceptions;
 using UsersMicroservice.Models;
 using UsersMicroservice.Service;
@@ -21,6 +22,7 @@ namespace UsersMicroservice.Controllers
         {
             try
             {
+                user.Role = "customer";
                 return StatusCode(201, service.AddUser(user));
             }
             catch (InvalidPasswordException e)
@@ -32,12 +34,31 @@ namespace UsersMicroservice.Controllers
                 return Conflict(e.Message);
             }
         }
+        [Authorize(Roles = "admin")]
+        [HttpPost("admin")]
+        public IActionResult PostAdmin(User user)
+        {
+            try
+            {
+                user.Role = "admin";
+                return StatusCode(201, service.AddUser(user));
+            }
+            catch (InvalidPasswordException e)
+            {
+                return BadRequest(e.Message);
+            }
+            catch (UserAlreadyExistException e)
+            {
+                return Conflict(e.Message);
+            }
+        }
+
         [HttpPost("userlogin")]
         public IActionResult UserLogin(Login user)
         {
             try
             {
-                var obj = service.LoginUser(user.Email,user.Password);
+                var obj = service.LoginUser(user.Email, user.Password);
                 return Ok(token.GenerateJWTToken(obj.Name, obj.Role));
             }
             catch (UserAlreadyExistException e)
@@ -69,6 +90,19 @@ namespace UsersMicroservice.Controllers
                 return NotFound(e.Message);
             }
         }
+        [HttpGet("{Email}")]
+        public IActionResult GetUserByEmail(string Email)
+        {
+            try
+            {
+                return Ok(service.GetUserByEmail(Email));
+            }
+            catch (UserNotFoundException e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+
         [HttpPut("{Id:int}")]
         public IActionResult UpdateUser(int Id, User user)
         {

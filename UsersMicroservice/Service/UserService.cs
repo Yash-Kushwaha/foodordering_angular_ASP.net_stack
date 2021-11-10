@@ -47,6 +47,16 @@ namespace UsersMicroservice.Service
             }
         }
 
+        public User GetUserByEmail(string Email)
+        {
+            var user = repo.GetUserByEmail(Email);
+            if (user == null)
+            {
+                throw new UserNotFoundException("No Users Found");
+            }
+            return user;
+        }
+
         public User GetUserById(int Id)
         {
             var obj = repo.GetUserById(Id);

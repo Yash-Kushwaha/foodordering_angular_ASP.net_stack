@@ -5,7 +5,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "food-orderfoodapi-1",
+          "Host": "food-orderfoodapi",
           "Port": 80
         }
       ],
@@ -17,7 +17,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "food-orderfoodapi-1",
+          "Host": "food-orderfoodapi",
           "Port": 80
         }
       ],
@@ -31,7 +31,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "food-promotioncode-1",
+          "Host": "food-promotioncode",
           "Port": 80
         }
       ],
@@ -43,7 +43,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "food-promotioncode-1",
+          "Host": "food-promotioncode",
           "Port": 80
         }
       ],
@@ -55,7 +55,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "food-promotioncode-1",
+          "Host": "food-promotioncode",
           "Port": 80
         }
       ],
@@ -70,7 +70,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "food-restaurantapi-1",
+          "Host": "food-restaurantapi",
           "Port": 80
         }
       ],
@@ -82,7 +82,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "food-restaurantapi-1",
+          "Host": "food-restaurantapi",
           "Port": 80
         }
       ],
@@ -94,7 +94,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "food-restaurantapi-1",
+          "Host": "food-restaurantapi",
           "Port": 80
         }
       ],
@@ -106,7 +106,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "food-restaurantapi-1",
+          "Host": "food-restaurantapi",
           "Port": 80
         }
       ],
@@ -118,7 +118,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "food-restaurantapi-1",
+          "Host": "food-restaurantapi",
           "Port": 80
         }
       ],
@@ -132,7 +132,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "food-users-1",
+          "Host": "food-users",
           "Port": 80
         }
       ],
@@ -144,7 +144,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "food-users-1",
+          "Host": "food-users",
           "Port": 80
         }
       ],
@@ -156,7 +156,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "food-users-1",
+          "Host": "food-users",
           "Port": 80
         }
       ],

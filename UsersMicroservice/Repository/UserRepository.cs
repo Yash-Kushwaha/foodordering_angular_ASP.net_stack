@@ -33,6 +33,11 @@ namespace UsersMicroservice.Repository
             return db.Users.Where(x => true).ToList();
         }
 
+        public User GetUserByEmail(string Email)
+        {
+            return db.Users.Where(x => x.Email == Email).FirstOrDefault();
+        }
+
         public User GetUserById(int Id)
         {
             return db.Users.Where(x => x.UserId == Id).FirstOrDefault();

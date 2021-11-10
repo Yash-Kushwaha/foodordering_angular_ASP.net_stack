@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace UsersMicroservice.Models
 {
@@ -13,7 +14,7 @@ namespace UsersMicroservice.Models
         public string Password { get; set; }
         [Required]
         public string MobileNumber { get; set; }
-        [Required]
+        [JsonIgnore]
         public string Role { get; set; }
         [Required]
         public string Address { get; set; }

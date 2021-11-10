@@ -4,6 +4,7 @@ services:
     image: mongo
     ports:
       - "27017:27017"
+    container_name: food-db
   
   sqlserverdb:
     image: mcr.microsoft.com/mssql/server:2019-latest
@@ -12,9 +13,10 @@ services:
     environment:
       - SA_PASSWORD=pass@123
       - ACCEPT_EULA=Y
+    container_name: food-sqlserverdb
 
   restaurantapi:
-    image: restaurantapi
+    image: food-restaurantapi
     ports:
       - "5002:80"
     environment:
@@ -23,9 +25,10 @@ services:
     depends_on:
       - db
       - apigateway
+    container_name: food-restaurantapi
 
   users:
-    image: users
+    image: food-users
     ports:
       - "5001:80"
     environment:
@@ -33,9 +36,10 @@ services:
     depends_on:
       - sqlserverdb
       - apigateway
+    container_name: food-users
   
   promotioncode:
-    image: promotioncode
+    image: food-promotioncode
     ports:
       - "5003:80"
     environment:
@@ -43,9 +47,10 @@ services:
     depends_on:
       - sqlserverdb
       - apigateway
+    container_name: food-promotioncode
   
   orderfoodapi:
-    image: orderfoodapi
+    image: food-orderfoodapi
     ports:
       - "5004:80"
     environment:
@@ -54,8 +59,10 @@ services:
     depends_on:
       - db
       - apigateway
+    container_name: food-orderfoodapi
   
   apigateway:
-    image: apigateway
+    image: food-apigateway
     ports:
       - "5005:80"
+    container_name: food-apigateway

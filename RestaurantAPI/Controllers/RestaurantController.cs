@@ -67,12 +67,12 @@ namespace RestaurantAPI.Controllers
             return Ok(service.GetFoodItems(RestaurantName));
         }
 
-        [Authorize(Roles = "admin,customer")]
-        [HttpGet("{RestaurantName}/{FoodItemName}")]
-        public IActionResult GetFoodItem(string RestaurantName, string FoodItemName)
-        {
-            return Ok(service.GetFoodItem(RestaurantName, FoodItemName));
-        }
+        //[Authorize(Roles = "admin,customer")]
+        //[HttpGet("{RestaurantName}/{FoodItemName}")]
+        //public IActionResult GetFoodItem(string RestaurantName, string FoodItemName)
+        //{
+        //    return Ok(service.GetFoodItem(RestaurantName, FoodItemName));
+        //}
 
         [Authorize(Roles = "admin")]
         [HttpDelete("{RestaurantName}/{FoodItemName}")]
